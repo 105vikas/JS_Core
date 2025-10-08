@@ -14,3 +14,12 @@
 // Block
 
 // first search on it's own scope then out scope till the global scope don't come
+
+//  Exicution Constext -> Memory Creation + Code Exicution 
+
+// Memory Creation -> Global + Script
+// Var, function -> Global scope
+// let, const -> Script scope / block memory
+// function/variable that don't present in global scope -> Local
+
+// new keyword
