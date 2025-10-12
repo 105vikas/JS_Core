@@ -22,4 +22,4 @@
 // let, const -> Script scope / block memory
 // function/variable that don't present in global scope -> Local
 
-// new keyword
+// new keyword -> create a instance of object it is constructor function
