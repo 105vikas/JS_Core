@@ -18,12 +18,33 @@ const ab = function () {
 }
 ab();
 
-// Arrow function -> short & don't fllow hosting
+// Arrow function -> short & don't fllow hosting,alternative of normal function 
 const arrowfun = () => {
-
+    console.log(this, "Arrow function this it's refer global & globleObj refer window in website")
 }
+arrowfun();
+[1, 2, 3, 4, 5].map((val, i) => { console.log("Value: ", val, "Index: ", i) });
 
-// callback function 
+// callback function: Function pass into another function as argument to invoke that function to exicute
+let a = 4;
+const backFun = (callback) => {
+    a = a * 2;
+    callback('12');
+}
+const callFun = () => {
+    console.log(a, 'callBack');
+    backFun((val) => console.log(val, "Value"));
+    console.log(a, 'CallBack-2')
+}
+callFun();
 
+// High oder function: function that take argument as a function & return a function 
 
-// High oder function
+const highFun = () => {
+    console.log("2")
+}
+const oderFun = (callback) => {
+    console.log("1")
+    callback();
+}
+oderFun(highFun)
