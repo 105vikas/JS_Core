@@ -28,8 +28,35 @@ let newPassword = newEncapsulation.getter();
 console.log("New Password: ", newPassword)
 
 
-// Abstraction: 
+// Abstraction: hide implementation only show the behaviour
+function abstractionFun() {
+    let firstName;
+    let lastName;
+    let abstractionObje = {}
+    abstractionObje.setFName = function (name) {
+        firstName = name;
+    }
+    abstractionObje.setLName = function (name) {
+        lastName = name;
+    }
+    abstractionObje.printValue = function () {
+        return `First Name: ${firstName}, Last Name: ${lastName}`
+    }
+    return abstractionObje;
+}
+
+let abstractionObjData = abstractionFun();
+abstractionObjData.setFName("Vvvvv")
+abstractionObjData.setLName("Vvvvv")
+console.log(abstractionObjData.printValue())
 
 
 // Inheritance
+class inheri {
+    constructor() {
+
+    }
+}
+
+
 // Polymorphism
