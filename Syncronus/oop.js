@@ -51,7 +51,7 @@ abstractionObjData.setLName("Vvvvv")
 console.log(abstractionObjData.printValue())
 
 
-// Inheritance
+// Inheritance: pass the poperty to the child object
 class inheri {
     constructor() {
         console.log(this, "this of parent object")
@@ -76,8 +76,7 @@ const newInheritance = new inheritat
 console.log(newInheritance.child(), "Inheritance")
 
 
-// Polymorphism
-
+// Polymorphism: Polymorhpism is the extracting the parent object & overiding it so that we use it many times
 class Polym {
     constructor(polyName) {
         this.polyName = polyName;
