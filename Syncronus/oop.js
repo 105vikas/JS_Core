@@ -54,9 +54,46 @@ console.log(abstractionObjData.printValue())
 // Inheritance
 class inheri {
     constructor() {
-
+        console.log(this, "this of parent object")
+        this.firstO = "456"
+    }
+    parents() {
+        console.log("Parents Inheritance", this.firstO)
+        return "Parents Inheritance"
     }
 }
+class inheritat extends inheri {
+    constructor() {
+        super();
+        this.secondO = "123"
+    }
+    child() {
+        console.log("child", this.parents())
+        return "child in Inheritance"
+    }
+}
+const newInheritance = new inheritat
+console.log(newInheritance.child(), "Inheritance")
 
 
 // Polymorphism
+
+class Polym {
+    constructor(polyName) {
+        this.polyName = polyName;
+    }
+    parent() {
+        return 'This is the polymorphism Parent'
+    }
+}
+class Orphism extends Polym {
+    constructor() {
+        super();
+
+    }
+    parent() {
+        return 'Second is the polymorphism Child'
+    }
+}
+const polymorObj = new Orphism();
+console.log(polymorObj.parent())
