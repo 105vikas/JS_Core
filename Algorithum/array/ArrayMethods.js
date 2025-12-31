@@ -184,7 +184,6 @@ console.log(myKeys)
 let objVal = { 3: 3, 4: 4, 5: 5 }
 let value = Object.values(objVal)
 console.log(value)
-
 Object.prototype.myValue = function (obj) {
     let values = []
     console.log(obj)
@@ -203,6 +202,5 @@ Object.prototype.myEntries = function (obj) {
     console.log(obj)
     return entries
 }
-
 let myEnt = Object.myEntries(objKeys)
 console.log(myEnt)

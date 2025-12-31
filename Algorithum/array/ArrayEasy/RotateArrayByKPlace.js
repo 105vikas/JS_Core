@@ -1,6 +1,7 @@
 let inputVal = [1, 2]
 
-var rotateBruteForce = function (nums, k) {     // T(n+M) S(1)
+var rotateBruteForce = function (nums, k) {     // T(n*M) S(1)
+    if (k > nums.length) k = k % nums.length
     while (k > 0) {
         let lastVal = nums[nums.length - 1];
         for (let i = nums.length - 1; i > 0; i--) {
@@ -10,11 +11,10 @@ var rotateBruteForce = function (nums, k) {     // T(n+M) S(1)
         k--;
     }
 };
-
 // rotateBruteForce(inputVal, 3)
 // console.log(inputVal)
 
-var rotateOptimal = function (nums, k) {                        // T(n) S(1)
+var rotateOptimal = function (nums, k) {             // T(3n) S(1)
     if (nums.length === 1 || nums.length === 0) {
         return nums
     }
@@ -38,5 +38,5 @@ var rotateOptimal = function (nums, k) {                        // T(n) S(1)
     }
 };
 
-rotateOptimal(inputVal, 7)
+rotateOptimal(inputVal, 3)
 console.log(inputVal)

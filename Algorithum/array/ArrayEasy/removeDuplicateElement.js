@@ -1,5 +1,5 @@
 let inputArr = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4]
-function removeDuplicateEleFromSorted(arr) {
+function removeDuplicateEleFromSorted(arr) {    //T(2n) S(n)
     let outPut = []
     for (let i = 0; i < arr.length - 1; i++) {
         if (arr[i] !== arr[i + 1]) {
@@ -21,7 +21,7 @@ function removeDuplicateEleFromSorted(arr) {
 
 
 [0, 0, 1, 1, 1, 2, 2, 3, 3, 4]
-function removeDuplicateEleFromSortedOptimise(arr) {
+function removeDuplicateEleFromSortedOptimise(arr) {   //T(n) S(1)
     let i = 0;              //1
     for (j = 1; j < arr.length; j++) {      //5
         if (arr[j] !== arr[i]) {        // 2 != 1

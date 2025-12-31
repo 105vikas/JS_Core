@@ -21,7 +21,6 @@ function CheckSorted(arr) {
 // console.log(outPut)
 
 
-
 function CheckSortedRotated(arr) {
     if (arr.length === 0) {
         return

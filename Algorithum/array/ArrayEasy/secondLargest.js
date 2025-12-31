@@ -1,7 +1,7 @@
-// let arr = [-1, -2, -3, -4]// not correct ouput
-let arr = [0, 35, 56, 7, 22, 1, 5] // Expected output: largest: 10,secondLargestElement: NaN
+let arr = [-1, -2, -3, -4]// not correct ouput
+// let arr = [12, 12, 12] // Expected output: largest: 10,secondLargestElement: NaN
 
-function secondLargestElementBrut(arr) {
+function secondLargestElementBrut(arr) {    //T(nlogn+n) S(n)
     arr = arr.sort((a, b) => a - b);
     let largest = arr[arr.length - 1];
     let secondLar = -1;
@@ -17,8 +17,7 @@ let outPut1 = secondLargestElementBrut(arr)
 console.log(outPut1)
 
 
-
-function secondLargestElementBetter(arr) {
+function secondLargestElementBetter(arr) {      //T(2n) s(1)
     let largest = -1;
     let secLar = -1;
     for (let i = 0; i < arr.length; i++) {
@@ -37,15 +36,13 @@ let outPut2 = secondLargestElementBetter(arr)
 console.log(outPut2)
 
 
-
-
-function secondLargestElement(arr) {
+function secondLargestElement(arr) {    //T(n) S(1)
     if (arr.length <= 0) {
         return;
     }
     let largestElem = {
         largest: arr[0],        //  16
-        secondLargestElement: null      // 13
+        secondLargestElement: -Infinity      // 13
     }
     if (arr.length === 1) {
         return largestElem;
@@ -59,7 +56,7 @@ function secondLargestElement(arr) {
         if (arr[i] > largestElem.largest) {             //  13>16
             largestElem.secondLargestElement = largestElem.largest
             largestElem.largest = arr[i]
-        } else if (arr[i] > largestElem.secondLargestElement) {       //13>12
+        } else if (arr[i] > largestElem.secondLargestElement && arr[i] !== largestElem.largest) {       //13>12
             largestElem.secondLargestElement = arr[i]
         }
     }

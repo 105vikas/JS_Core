@@ -1,7 +1,7 @@
 let str1 = "rat";
 let str2 = "car";
 
-function checkAnagramBruteForce(st1, st2) {     // T(n) s(n)
+function checkAnagramBruteForce(st1, st2) {     // T(2n+m+2nlogn) s(2n)
     if (st1.length !== st2.length) {
         return false;
     }
@@ -25,7 +25,7 @@ function checkAnagramBruteForce(st1, st2) {     // T(n) s(n)
 // let outPut1 = checkAnagramBruteForce(str1, str2);
 // console.log(outPut1)
 
-function checkAnagramOptimise(st1, st2) {   // T(n) s(n)
+function checkAnagramOptimise(st1, st2) {   // T(3n) s(2n)
     if (st1.length !== st2.length) {
         return false;
     }
@@ -40,12 +40,14 @@ function checkAnagramOptimise(st1, st2) {   // T(n) s(n)
         obj2[char] = (obj2[char] || 0) + 1;
     }
 
-    Object.keys(obj1).forEach(key => {
+    let keyss = Object.keys(obj1)
+    for (let i = 0; i < keyss.length; i++) {
+        let key = keyss[i]
         if (obj1[key] !== obj2[key]) {
-            console.log("ldskfja")
             return false;           // it ruturning but why after that it returning true
         }
-    })
+    }
+
     return true
 }
 
