@@ -1,24 +1,25 @@
-let piles = [30, 11, 23, 4, 20]
-let h = 5
+let piles = [10, 11, 23, 4, 20]
+let h = 23
 
 function KokoEatBrute(pl, hour) {       //T (maxElementOfArr*n)
-    let maxBananaPerHour = 0;
-    let eatenPerH = 0;
+    let answ = 0;
+    let maxBanPiles = -1;
     for (let i = 0; i < pl.length; i++) {
-        if (maxBananaPerHour < pl[i]) {
-            maxBananaPerHour = pl[i]
+        if (maxBanPiles > pl[i]) {
+            maxBanPiles = pl[i];
         }
+    }
 
-    }
-    let takenHours = Infinity;
-    while (takenHours > hour && eatenPerH <= maxBananaPerHour) {
-        takenHours = 0
-        eatenPerH += 1
+    for (let i = 0; i < maxBanPiles; i++) {
+        let sum = 0;
         for (let i = 0; i < pl.length; i++) {
-            takenHours += Math.ceil(pl[i] / eatenPerH)
+            sum += pl[i];
+        }
+        if (sum > 0 && targeHours <= sum && sum > min) {
+            answ = i;
         }
     }
-    return eatenPerH
+    return answ;
 }
 
 let outPut = KokoEatBrute(piles, h)
